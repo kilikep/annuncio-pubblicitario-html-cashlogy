@@ -3,78 +3,159 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cashlogy POS - Offerta Speciale</title>
+    <title>Stampante Epson TM-T20III - Offerta Speciale</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        body {
-            font-family: 'Arial', sans-serif;
+        * {
             margin: 0;
             padding: 0;
-            background-color: #f5f7fa;
-            color: #333;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
-        .container {
-            max-width: 800px;
-            margin: 20px auto;
-            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-        .header {
-            background-color: #3a7bd5;
+        
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4e8f0 100%);
+            color: #2c3e50;
+            line-height: 1.6;
             padding: 20px;
-            text-align: center;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        header {
+            background: linear-gradient(135deg, #3a7bd5 0%, #2c3e50 100%);
             color: white;
+            padding: 30px;
+            text-align: center;
         }
-        .header h1 {
-            margin: 0;
-            font-size: 36px;
-            letter-spacing: 2px;
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
         }
-        .header p {
-            margin: 5px 0 0;
+        
+        .subtitle {
             font-style: italic;
+            opacity: 0.9;
+            font-size: 1.2rem;
         }
+        
+        .product-code {
+            background: rgba(255, 255, 255, 0.2);
+            display: inline-block;
+            padding: 5px 15px;
+            border-radius: 20px;
+            margin-top: 10px;
+            font-size: 0.9rem;
+        }
+        
         .content {
             padding: 30px;
-        }
-        .product-info {
             display: flex;
-            margin-bottom: 25px;
-            align-items: center;
+            flex-wrap: wrap;
         }
+        
         .product-image {
             flex: 1;
+            min-width: 300px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 10px;
             text-align: center;
-            background-color: #fff;
-            padding: 0px;
-            border-radius: 8px;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
         }
+        
+        .image-placeholder {
+            width: 300px;
+            height: 300px;
+            background: linear-gradient(135deg, #e4e8f0 0%, #d1d9e8 100%);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #7f8c8d;
+            font-style: italic;
+            margin-bottom: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        }
+        
         .product-image img {
             max-width: 100%;
-            height: auto;
-            border-radius: 5px;
-        }
-        .product-details {
-            flex: 1;
-            padding: 0 20px;
-        }
-        .price-section {
-            text-align: center;
-            margin: 25px 0;
-            padding: 20px;
-            background-color: #fff;
             border-radius: 8px;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
-        .old-price {
+        
+        .product-info {
+            flex: 1;
+            min-width: 300px;
+            padding: 20px;
+        }
+        
+        h2 {
+            color: #3a7bd5;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+        
+        .product-status {
+            display: inline-block;
+            background: #2ecc71;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+        
+        .features {
+            list-style-type: none;
+            margin: 20px 0;
+        }
+        
+        .features li {
+            padding: 10px 0;
+            border-bottom: 1px dashed #e4e8f0;
             position: relative;
+            padding-left: 30px;
+        }
+        
+        .features li:before {
+            content: "✓";
+            color: #3a7bd5;
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+        
+        .price-section {
+            background: #fff;
+            padding: 25px;
+            text-align: center;
+            border-top: 1px solid #e4e8f0;
+            border-bottom: 1px solid #e4e8f0;
+            position: relative;
+        }
+        
+        .old-price {
+            font-size: 1.8rem;
+            color: #95a5a6;
             display: inline-block;
             margin-right: 20px;
-            color: #888;
-            font-size: 24px;
+            position: relative;
         }
+        
         .old-price:after {
             content: "";
             position: absolute;
@@ -85,83 +166,159 @@
             background-color: #ff4d4d;
             transform: rotate(-15deg);
         }
+        
         .new-price {
-            display: inline-block;
-            color: #ff4d4d;
-            font-size: 36px;
+            font-size: 2.5rem;
+            color: #e74c3c;
             font-weight: bold;
+            display: inline-block;
         }
+        
         .discount-badge {
             display: inline-block;
-            background-color: #ff4d4d;
+            background: #e74c3c;
             color: white;
-            padding: 5px 15px;
-            border-radius: 20px;
+            padding: 8px 20px;
+            border-radius: 30px;
             font-weight: bold;
-            margin-left: 15px;
-            font-size: 20px;
+            margin-left: 20px;
+            font-size: 1.2rem;
         }
-        .contact-info {
-            background-color: #3a7bd5;
-            padding: 20px;
+        
+        .note {
             text-align: center;
-            color: white;
-            border-radius: 0 0 10px 10px;
+            padding: 15px;
+            font-size: 0.9rem;
+            color: #7f8c8d;
+            font-style: italic;
         }
-        .contact-info a {
+        
+        .contact {
+            background: #2c3e50;
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+        
+        .contact h2 {
+            color: white;
+            margin-bottom: 20px;
+        }
+        
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-top: 20px;
+        }
+        
+        .contact-item {
+            padding: 15px 25px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            min-width: 250px;
+        }
+        
+        .contact-item a {
             color: white;
             text-decoration: none;
-            margin: 0 10px;
-        }
-        .note {
-            font-size: 12px;
-            color: #888;
-            text-align: center;
+            display: block;
             margin-top: 10px;
-            font-style: italic;
+            font-size: 1.1rem;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #7f8c8d;
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 768px) {
+            .content {
+                flex-direction: column;
+            }
+            
+            .product-image, .product-info {
+                min-width: 100%;
+            }
+            
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            .contact-info {
+                flex-direction: column;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="header">
-            <h1>Cashlogy POS</h1>
-            <p>by AZKOVEN</p>
-        </div>
+        <header>
+            <h1>Stampante Epson TM-T20III</h1>
+            <p class="subtitle">Stampante termica per scontrini di alta qualità</p>
+            <div class="product-code">SKU: C31CH51012 | EU</div>
+        </header>
         
         <div class="content">
-            <div class="product-info">
-                <div class="product-image">
-                    <!-- Immagine rappresentativa di un POS -->
-                    <img src="IMG-20250731-WA0000-removebg-preview.png" alt="Cashlogy POS System">
+            <div class="product-image">
+                <div class="image-placeholder">
+                    Spazio per l'immagine del prodotto<br>
+                    (300x300px)
                 </div>
-                <div class="product-details">
-                    <h2>Terminale di Pagamento Avanzato</h2>
-                    <p>Il sistema POS Cashlogy offre una soluzione completa per la gestione dei pagamenti nella tua attività. Facile da usare, sicuro ed efficiente.</p>
-                    <ul>
-                        <li>Accetta tutti i principali metodi di pagamento</li>
-                        <li>Connettività Wi-Fi e Ethernet</li>
-                        <li>Stampa integrata degli scontrini</li>
-                        <li>Software di gestione inclusa</li>
-                        <li>Applicazione cashlogy compatibile</li>
-                    </ul>
-                </div>
+                <img src="path-a.jpg" alt="Stampante Epson TM-T20III">
+                
             </div>
             
-            <div class="price-section">
-                <span class="old-price">11.498€</span>
-                <span class="new-price">7.000€</span>
-                <span class="discount-badge">OFFERTA SPECIALE!</span>
+            <div class="product-info">
+                <span class="product-status">NUOVA - ANCORA NELLA CONFEZIONE ORIGINALE</span>
+                <h2>Stampante Termica Professionale</h2>
+                <p>La stampante termica Epson TM-T20III offre prestazioni eccezionali e affidabilità per il tuo business. Ideale per punti vendita, ristoranti e attività commerciali.</p>
+                
+                <ul class="features">
+                    <li>Connessione Ethernet integrata</li>
+                    <li>Compatibile con PostScript</li>
+                    <li>Design compatto e robusto</li>
+                    <li>Velocità di stampa fino a 200mm/s</li>
+                    <li>Facile installazione e utilizzo</li>
+                    <li>Basso consumo energetico</li>
+                    <li>Supporto per rulli termici da 80mm</li>
+                    <li>Alta affidabilità e durata nel tempo</li>
+                </ul>
+                
+                <p>Prodotto nuovo, ancora sigillato nella confezione originale con garanzia completa del produttore.</p>
             </div>
-                <p class="note">Nota: La chiave della serratura è persa, ma il dispositivo è completamente funzionante.</p>
-                <p class="note">Nota: Il prodotto non è mai stato usato ma tenuto in magazzino. </p>
-            </div>
-        
-        <div class="contact-info">
-            <h2>Contattaci per maggiori informazioni!</h2>
-            <p>Email: <a href="mailto:michelezheng45@gmail.com">michelezheng45@gmail.com</a></p>
-            <p>Telefono: <a href="tel:3791151021">379 115 1021</a></p>
         </div>
+        
+        <div class="price-section">
+            <span class="old-price">237,68€</span>
+            <span class="new-price">160€</span>
+            <span class="discount-badge">SCONTO 33%</span>
+        </div>
+        
+        <p class="note">Prodotto nuovo, in confezione originale sigillata. Garanzia completa inclusa.</p>
+        
+        <div class="contact">
+            <h2>Contattaci per acquistare o per maggiori informazioni!</h2>
+            
+            <div class="contact-info">
+                <div class="contact-item">
+                    <h3>Email</h3>
+                    <a href="mailto:michelezheng45@gmail.com">michelezheng45@gmail.com</a>
+                </div>
+                
+                <div class="contact-item">
+                    <h3>Telefono</h3>
+                    <a href="tel:3791151021">379 115 1021</a>
+                </div>
+            </div>
+        </div>
+        
+        <footer>
+            <p></p>
+        </footer>
     </div>
 </body>
 </html>
